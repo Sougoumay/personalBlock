@@ -20,7 +20,7 @@
                                     <h5 class="card-title">Article {{$article->id}}</h5>
                                     <h1 class="card-title">{{$article->title}}</h1>
                                     <div class="align-content-around">
-                                        <img src="{{asset('/1').'/'.$article->image}}"/>
+                                        <img src="{{asset('/uploads/profile').'/'.$article->image}}"/>
                                     </div>
                                     <p class="align-content-around">{{$article->content}}</p>
                                 </div>

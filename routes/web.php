@@ -16,11 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::view('/essai','layouts.essai');
+
 Route::get('/getAddAcademicBackgroundForm',[SkillController::class,'getAddAcademicBackgroundForm'])
     ->name('getAddAcademicBackgroundForm');
 
-Route::get('/getEditAcademicBackground',[SkillController::class,'getEditAcademicBackgroundForm'])
-    ->name('getEditAcademicBackgroundForm');
+Route::post('/addAcademicBackground',[SkillController::class,'addAcademicBackground'])
+    ->name('addAcademicBackground');
+
+Route::get('/getEditAcademicBackground/{id}',[SkillController::class,'getEditAcademicBackgroundForm'])
+    ->name('getEditAcademicBackgroundForm')->where(['id'=>'[0-9]+']);
 
 Route::post('/editAcademicBackground/{id}',[SkillController::class,'editAcademicBackground'])
     ->name('editAcademicBackground')->where(['id'=>'[0-9]+']);
@@ -29,7 +34,8 @@ Route::get('/getAddLanguageForm',[SkillController::class,'getAddLanguageForm'])-
 
 Route::post('/addLanguage',[SkillController::class,'addLanguage'])->name('addLanguage');
 
-Route::get('/getEditLanguageForm',[SkillController::class,'getEditLanguageForm'])->name('getEditLanguageForm');
+Route::get('/getEditLanguageForm/{id}',[SkillController::class,'getEditLanguageForm'])->name('getEditLanguageForm')
+    ->where(['id'=>'[0-9]+']);
 
 Route::post('/editLanguage/{id}',[SkillController::class,'editLanguage'])->name('editLanguage')
     ->where(['id'=>'[0-9]+']);
@@ -41,9 +47,6 @@ Route::post('/addHobby',[SkillController::class,'addHobby'])->name('addHobby');
 Route::get('/getAddSoftwareForm',[SkillController::class,'getAddSoftwareForm'])->name('getAddSoftwareForm');
 
 Route::post('/addSoftware',[SkillController::class,'addSoftware'])->name('addSoftware');
-
-Route::post('/addAcademicBackground',[SkillController::class,'addAcademicBackground'])
-    ->name('addAcademicBackground');
 
 Route::get('/viewArticle/{id}',[ArticleController::class,'viewArticle'])
     ->name('viewArticle')->where(['id'=>'[0-9]+']);
@@ -61,7 +64,11 @@ Route::post('/createArticle',[ArticleController::class,'createArticle'])->name('
 
 Route::view('/index','index');
 
-Route::get('/homePage',[UserController::class,'homePage']);
+Route::view('/login','login');
+
+Route::view('/registre','registre');
+
+Route::get('/homePage',[UserController::class,'homePage'])->name('homePage');
 
 Route::get('/', function () {
     return view('welcome');

@@ -10,6 +10,6 @@ class UploadsFile
 
     public static function getUploadPAth($path)
     {
-        return public_path()>self::$uploadPaths[$path];
+        return public_path().self::$uploadPaths[$path];
     }
 }

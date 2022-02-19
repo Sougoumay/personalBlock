@@ -34,7 +34,7 @@ class SkillController extends Controller
         return back();
     }
 
-    function getEditAcademicBackgroundForm($id=1)
+    function getEditAcademicBackgroundForm($id)
     {
         $academic = Academic::find($id);
         return view('academicBackground.editAcademicBackgroundForm', compact('academic'));
@@ -65,7 +65,7 @@ class SkillController extends Controller
         return back();
     }
 
-    function getEditLanguageForm($id=1)
+    function getEditLanguageForm($id)
     {
         $language = Language::find($id);
         return view('languages.editLanguageForm', compact('language'));

@@ -80,21 +80,26 @@
                 <span class="nav-link">Navigation</span>
             </li>
             <li class="nav-item menu-items">
-                <a class="nav-link" href="{{route('homePage')}}">
-                    <span class="menu-title">HomePage</span>
+                <a class="nav-link" href="index.html">
+              <span class="menu-icon">
+                <i class="mdi mdi-speedometer"></i>
+              </span>
+                    <span class="menu-title">Dashboard</span>
                 </a>
             </li>
             <li class="nav-item menu-items">
                 <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                      <span class="menu-title">
-                        Articles
-                      </span>
+              <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+              </span>
+                    <span class="menu-title">Basic UI Elements</span>
                     <i class="menu-arrow"></i>
                 </a>
                 <div class="collapse" id="ui-basic">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="{{route("create_article")}}">Create Articles</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="{{route("allArticle")}}">View Articles</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
                     </ul>
                 </div>
             </li>
@@ -132,15 +137,19 @@
             </li>
             <li class="nav-item menu-items">
                 <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                    <span class="menu-title">User Data</span>
+              <span class="menu-icon">
+                <i class="mdi mdi-security"></i>
+              </span>
+                    <span class="menu-title">User Pages</span>
                     <i class="menu-arrow"></i>
                 </a>
                 <div class="collapse" id="auth">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="{{route('getAddAcademicBackgroundForm')}}"> Add Schhol Career </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="{{route('getAddLanguageForm')}}"> Add New Language </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="{{route('getAddHobbyForm')}}"> Add New Hobby </a></li>
-                        <li class="nav-item"> <a class="nav-link" href="{{route('getAddSoftwareForm')}}"> Add New Software </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
                     </ul>
                 </div>
             </li>
@@ -311,7 +320,7 @@
                         <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                             <div class="navbar-profile">
                                 <img class="img-xs rounded-circle" src="{{asset("assets/images/faces/HSA.jpg")}}" alt="">
-                                <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ config('constants.LAST_NAME') }} {{ config('constants.FIRST_NAME') }}</p>
+                                <p class="mb-0 d-none d-sm-block navbar-profile-name">Hamid Sougouma Ali</p>
                                 <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                             </div>
                         </a>

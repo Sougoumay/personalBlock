@@ -15,7 +15,7 @@
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <form class="forms-sample"  method="post" action="{{route('createRemark')}}" enctype="multipart/form-data">
+                            <form class="forms-sample"  method="post" action="{{route('createArticle')}}" enctype="multipart/form-data">
                                 @csrf
                                 @if($errors->any())
                                     <ul>
