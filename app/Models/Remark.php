@@ -11,7 +11,8 @@ class Remark extends Model
 
     protected $fillable = [
         'article_id',
-        'remark'
+        'remark',
+        'status'
     ];
 
     public function articles()

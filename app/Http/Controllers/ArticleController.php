@@ -7,7 +7,6 @@ use App\Http\Requests\RemarkRequest;
 use App\Models\Article;
 use App\Helpers\UploadsFile;
 use App\Models\Remark;
-use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
@@ -37,6 +36,7 @@ class ArticleController extends Controller
     function viewArticle($id)
     {
         $article = Article::with('remarks')->find($id);
+        // TODO : revoir les commentaires pour n'afficher que ceux qui sont autorises
         return view('articles.viewArticle',compact('article'));
     }
 
@@ -49,4 +49,22 @@ class ArticleController extends Controller
 
         return redirect()->route('viewArticle',$id);
     }
+
+    function viewComments()
+    {
+        $comments = Remark::all();
+        return view('articles.comments',compact('comments'));
+    }
+
+    function updatedComment($id)
+    {
+        //dd(Remark::find($id));
+        Remark::find($id)->update([
+            'status'=>'approved'
+        ]);
+
+        return back();
+    }
+
+    // TODO : il faut aussi creer les middlewares et separer les routes
 }

@@ -205,7 +205,7 @@
       }
     });
 
-    $('#user .editable').on('hidden', function(e, reason) {
+    $('#admin .editable').on('hidden', function(e, reason) {
       if (reason === 'save' || reason === 'nochange') {
         var $next = $(this).closest('tr').next().find('.editable');
         if ($('#autoopen').is(':checked')) {

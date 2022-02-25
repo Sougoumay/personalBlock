@@ -10224,13 +10224,13 @@
       var element = first$1('meta[name="viewport"]').getOrThunk(nu);
       var backup = get$b(element, 'content');
       var maximize = function () {
-        set$8(element, 'content', 'width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0');
+        set$8(element, 'content', 'width=device-width, initial-scale=1.0, admin-scalable=no, maximum-scale=1.0');
       };
       var restore = function () {
         if (backup !== undefined && backup !== null && backup.length > 0) {
           set$8(element, 'content', backup);
         } else {
-          set$8(element, 'content', 'user-scalable=yes');
+          set$8(element, 'content', 'admin-scalable=yes');
         }
       };
       return {

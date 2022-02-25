@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class RemarkRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Determine if the admin is authorized to make this request.
      *
      * @return bool
      */
@@ -24,7 +24,8 @@ class RemarkRequest extends FormRequest
     public function rules()
     {
         return [
-            'remark'=>'required|min:3|max:200'
+            'remark'=>'required|min:3|max:200',
+            'status'=>'string'
         ];
     }
 }

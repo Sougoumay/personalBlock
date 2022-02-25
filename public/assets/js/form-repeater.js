@@ -18,7 +18,7 @@
         $(this).slideDown();
       },
       // (Optional)
-      // "hide" is called when a user clicks on a data-repeater-delete
+      // "hide" is called when a admin clicks on a data-repeater-delete
       // element.  The item is still visible.  "hide" is passed a function
       // as its first argument which will properly remove the item.
       // "hide" allows for a confirmation step, to send a delete request

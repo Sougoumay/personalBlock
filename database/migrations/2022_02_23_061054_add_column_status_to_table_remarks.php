@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddLevelToLanguagesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddLevelToLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::table('languages', function (Blueprint $table) {
-            $table->string('level')->after('langue');
+        Schema::table('remarks', function (Blueprint $table) {
+            $table->enum('status',['pending','approved'])->default('pending')->after('remark');
         });
     }
 
@@ -25,8 +25,8 @@ class AddLevelToLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::table('languages', function (Blueprint $table) {
+        Schema::table('remarks', function (Blueprint $table) {
             //
         });
     }
-}
+};
